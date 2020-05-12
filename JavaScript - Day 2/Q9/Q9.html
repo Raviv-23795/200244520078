@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Q9</title>
+	</head>
+	<body>
+		Declare a string having an email Id and check if @ is there in the string or not
+		Enter your email ID: <input type="text" id="mail"><br/><br/>
+		
+		<input type="submit" value="Check" onclick="ValidateEmail();">
+		
+		<script>
+			function ValidateEmail()
+			{
+				var mailtxt=document.getElementById("mail").value;
+				mailtxt.split(",");
+				var flag=false,i,len=mailtxt.length;
+				for(i=0;i<len;i++)
+				{
+					if(mailtxt[i]=='@')
+					{
+						flag=true;
+						break;
+					}
+				}
+				if(flag==true)
+					window.alert("The email has '@'");
+				else	
+					window.alert("The email does not have '@'");
+			}
+		</script>
+	</body>
+</html>

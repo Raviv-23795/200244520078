@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Q8</title>
+	</head>
+	<body>
+		Create an array having 5 names and display it in descending order
+		<p id="sortar"></p>
+		<input type="submit" value="Sort" onclick="sortArr();">
+		
+		<script>
+			var arr = ["Ravi","Sandeep","Girish","Akash","Pratik"];
+			document.getElementById("sortar").innerHTML = arr;
+			
+			function sortArr()
+			{
+				arr.sort();
+				arr.reverse();
+				document.getElementById("sortar").innerHTML = arr;
+			}
+		</script>
+	</body>
+</html>

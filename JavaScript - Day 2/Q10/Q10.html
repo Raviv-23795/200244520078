@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Q10</title>
+	</head>
+	<body>
+		Declare a string having a 10 digit mobile number. Wwrite a function whose  job is to check if it has 10 digits or not<br/><br/>
+		Enter your Mobile Number: <input type="number" id="phone"><br/><br/>
+		
+		<input type="submit" value="Check" onclick="ValidateMoblie();">
+		
+		<script>
+			function ValidateMoblie()
+			{
+				var num=document.getElementById("phone").value;
+				num.split(",");
+				var len=num.length,cnt=0;
+				
+				if(len==10)
+					window.alert("Valid mobile number");
+				else	
+					window.alert("Invalid mobile number");
+			}
+		</script>
+	</body>
+</html>

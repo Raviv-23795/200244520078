@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Q11</title>
+	</head>
+	<body>
+		Write a function whose  job is to return a random number<br/><br/>
+		
+		<input type="submit" value="Generate a random number" onclick="document.getElementById('rannum').innerHTML = Math.random();">
+		<p id="rannum"></p>
+		
+		<script>
+			function ValidateMoblie()
+			{
+				var num=document.getElementById("phone").value;
+				num.split(",");
+				var len=num.length,cnt=0;
+				
+				if(len==10)
+					window.alert("Valid mobile number");
+				else	
+					window.alert("Invalid mobile number");
+			}
+		</script>
+	</body>
+</html>

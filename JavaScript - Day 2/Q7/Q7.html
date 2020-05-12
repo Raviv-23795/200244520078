@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Q7</title>
+	</head>
+	<body>
+		Create an array having 10 numbers and display it in ascending order
+		<p id="sortar"></p>
+		<input type="submit" value="Sort" onclick="sortArr();">
+		
+		<script>
+			var arr = [12,2,134,23,67,40,87,33,93,52];
+			document.getElementById("sortar").innerHTML = arr;
+			
+			function sortArr()
+			{
+				arr.sort(function(a,b){return a-b});
+				document.getElementById("sortar").innerHTML = arr;
+			}
+		</script>
+	</body>
+</html>

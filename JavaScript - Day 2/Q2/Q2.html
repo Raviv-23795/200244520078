@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Q2</title>
+	</head>
+	<body>
+		On button click print your name in P tag<br/><br/>
+		Enter your first name: <input type="text" id="fnm"><br/><br/>
+		Enter your last name: <input type="text" id="lnm"><br/><br/>
+		
+		<p id="name"></p>
+		
+		<input type="submit" onclick="getname();">
+		
+		<script>			
+			function getname()
+			{
+				var fname, lname;
+				fname = document.getElementById("fnm").value;
+				lname = document.getElementById("lnm").value;
+				
+				document.getElementById("name").innerHTML = fname+" "+lname+"<br/><br/>	";
+			}
+		</script>
+	</body>
+</html>

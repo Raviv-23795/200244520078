@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Q1</title>
+	</head>
+	<body>
+		Create an array having 10 numbers , write a function whose  job is to return max number from the array
+		<p id="maxarr"></p>
+		
+		<script>
+			var arr = [12,2,134,23,67,40,87,33,93,52];
+			document.getElementById("maxarr").innerHTML = arrMax(arr);
+			
+			function arrMax(arr)
+			{
+				var i, max=arr[0];
+				for(i=1;i<8;i++)
+				{
+					if(arr[i]>max)
+					{
+						max=arr[i];
+					}
+				}
+				return max;
+			}
+		</script>
+	</body>
+</html>
