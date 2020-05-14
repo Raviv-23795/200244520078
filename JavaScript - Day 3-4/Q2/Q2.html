@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Q2</title>
+	</head>
+	<body>
+		
+		<p id="obj1"></p>		
+		<p id="obj2"></p>
+		
+		<script>
+			/*
+			*Create class Account having property name, balance.
+			*Write method deposit whose job is to increase balance with the amount deposited by user.
+			*Create two objects and call deposit method. Write method display which will display name and balance
+			*/
+			class Account
+			{
+				constructor(uname,amt)
+				{
+					this.deptAmt = amt;
+					this.name = uname;
+					this.balance = 0;  //Assuming the initial value in accout as 0
+				}
+				deposit()
+				{
+					this.balance += this.deptAmt;
+				}
+				display(obj)
+				{
+					document.getElementById(obj).innerHTML = "Name = "+this.name+", Balance = "+this.balance+"<br/><br/>";
+				}
+			}
+			var acc1 = new Account("Ravi",5000);			
+			var acc2 = new Account("Sush",10000);
+			acc1.deposit();
+			acc1.display("obj1");
+			acc2.deposit();
+			acc2.display("obj2");
+		</script>
+	</body>
+</html>

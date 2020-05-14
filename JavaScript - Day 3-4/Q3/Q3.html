@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Q3</title>
+	</head>
+	<body>
+		Enter a number: <input type="number" id="num" /><br/><br/>
+		<input type="submit" onclick="document.getElementById('sqrcube').innerHTML = 'Square = '+math.square(num.value)+', Cube = '+math.cube(num.value)+'<br/><br/>'">
+		<p id="sqrcube"></p>
+		<script>
+			/*
+			*Create class math having two static methods, cube and square, whose job is to return the square and cube of a number
+			*/
+			class math
+			{
+				constructor(n)
+				{
+					this.num = n;
+				}
+				static cube(num)
+				{
+					return num*num*num;
+				}
+				static square(num)
+				{
+					return num*num;
+				}
+			}
+		</script>
+	</body>
+</html>
