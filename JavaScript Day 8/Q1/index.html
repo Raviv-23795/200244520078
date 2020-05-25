@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Q1</title>
+	</head>
+	<body>
+		<!--
+		Create class Employee which has instance member id, name , salary, net salary.
+		Also Write getter setter for each instance member.
+		Write calculate net salary function whose job is to calculate net salary after deduction of 10 % TDS.
+		Create 2 objects of the class and call method.
+		-->
+		<p id="emp1"></p>
+		<p id="emp2"></p>
+		
+		<script>
+			class Employee
+			{
+				set empId(id)
+				{
+					this.id = id;
+				}
+				set empName(name)
+				{
+					this.name = name;
+				}
+				set empSalary(salary)
+				{
+					this.salary = salary;
+				}
+				get empId()
+				{
+					return this.id;
+				}
+				get empName()
+				{
+					return this.name;
+				}
+				get empSalary()
+				{
+					return this.salary;
+				}
+				netSalary()
+				{
+					this.netSal = this.salary * 0.9;
+					return this.netSal;
+				}
+			}
+			
+			var emp1 = new Employee();
+			emp1.id = "1";
+			emp1.name = "Ravi";
+			emp1.salary = 10000;
+			
+			document.getElementById("emp1").innerHTML = "<h3>Employee 1:</h3> ID: " + emp1.empId + 
+			"<br/>Name: " + emp1.name + "<br/>Salary: " + emp1.salary + "<br/>Net Salary: " + emp1.netSalary();
+			
+			var emp2 = new Employee();
+			emp2.id = "2";
+			emp2.name = "Sush";
+			emp2.salary = 150000;
+			
+			document.getElementById("emp2").innerHTML = "<hr/><h3>Employee 2:</h3> ID: " + emp2.empId + 
+			"<br/>Name: " + emp2.name + "<br/>Salary: " + emp2.salary + "<br/>Net Salary: " + emp2.netSalary();
+			
+		</script>
+	</body>
+</html>
