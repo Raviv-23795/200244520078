@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Q1</title>
+	</head>
+	<body>
+		<!--write a self invoking function  whose job is to print your name.-->
+		
+		Enter your name: <input type="text" id="name" required/><br/><br/>
+		
+		<input type="submit" onclick="(function(){document.getElementById('txt').innerHTML = 'Hello, your name is ' + document.getElementById('name').value + '!';})()">
+		
+		<p id='txt'></p>
+	</body>
+</html>

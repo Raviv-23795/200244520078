@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Q3</title>
+	</head>
+	<body>
+		<!--
+		write a function sum with no parameter but it will do the sum of numbers passed in function call eg sum(2,3,5), sum(2,4).
+		So your definition will work irrespective of the number of parameters passed
+		-->
+		
+		<p id='sum'></p>
+		
+		<script>
+			function calcSum()
+			{
+				var i, sum=0, len;
+				len = arguments.length;
+				for(i=0;i<len;i++)
+				{
+					sum += arguments[i];
+				}
+				return sum;
+			}
+			
+			document.getElementById("sum").innerHTML = 'Sum of  \"3, 1, 14, 12, 345, 2\" is ' + calcSum(3,1,14,12,345,2) + '.';
+		</script>
+	</body>
+</html>

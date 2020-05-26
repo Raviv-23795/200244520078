@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Q2</title>
+	</head>
+	<body>
+		<!--write a self invoking function whose job is to return square of a number-->
+		
+		Enter a number: <input type="num" id="num" required/><br/><br/>
+		
+		<input type="submit" value = " Calculate Square " onclick="(function(){document.getElementById('txt').innerHTML = '<h3>' + Math.pow(document.getElementById('num').value,2) + '</h3>';})()">
+		
+		<p id='txt'></p>
+	</body>
+</html>
