@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Q9</title>
+	</head>
+	<body>
+		<!--
+		Create a textbox ,and a span tag, on change event on text box it should display data entered in text box in span tag which is next to it text box.
+		-->
+		
+		Enter your name in the text box and then click outside it to see the name beside text box.<br/><br/>
+		
+		<input type="text" id="name" onchange="copyName()" required/>
+		<span id = "cpytxt"></span>
+		
+		<script>
+			function copyName()
+			{
+				document.getElementById("cpytxt").innerHTML = document.getElementById("name").value;
+			}
+		</script>
+	</body>
+</html>

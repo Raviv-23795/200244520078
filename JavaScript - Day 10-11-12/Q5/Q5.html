@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Q5</title>
+	</head>
+	<body>
+		<!--
+		Create a dropdown box showing the number 1 to 10.
+		Write your name in p tag let user select option from dropdown and that font size should be applied to the data in p tag
+		-->
+		
+		<p id="name">Ravi Verma</p><br/>
+		
+		Select a value to change the size of the above text<br/><br/>
+		<select name="fntSz" onclick="changeFontSize(this.value)">
+			<option> - Size - </option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+		</select>	
+		
+		<script>
+			function changeFontSize(fntSz)
+			{
+				document.getElementById("name").style.fontSize = fntSz+"em";
+			}
+		</script>
+	</body>
+</html>

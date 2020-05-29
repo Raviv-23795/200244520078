@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Q2/title>
+	</head>
+	<body>
+		<!--
+		Write your name in h1 tag align it to the left, on button click it should align to right
+		-->
+		<h1 id="name" style="text-align:left;">Ravi Verma</h3>
+		<input type="button" value=" Move to Right " id="btn" onclick="changeColour()">
+		
+		<script>
+			function changeColour()
+			{
+				document.getElementById("name").style.textAlign = "right";
+			}
+		</script>
+	</body>
+</html>

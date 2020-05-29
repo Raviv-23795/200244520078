@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Q6</title>
+	</head>
+	<body>
+		<!--
+		 Create three text boxes and two radio buttons showing value “add” and “subtract”.
+		 Let user enter number in two text boxes and as per the selected radio button it should display result in the 3rd text box.
+		-->
+		
+		Enter the first number: <input type="number" id="num1" required/><br/><br/>
+		Enter the second number: <input type="number" id="num2"required/><br/><br/>
+		
+		Click on the colour name to change the colour of text in the text box.<br/><br/>
+		<input type="radio" onclick="calculateResult(this.value)" value="add" name="op"/>Add
+		<input type="radio" onclick="calculateResult(this.value)" value="sub" name="op"/>Subtract<br/><br/>
+		
+		<input type="number" id="res" required/><br/><br/>
+		
+		<script>
+			function calculateResult(val)
+			{
+				if(val=="add")
+					document.getElementById("res").value = parseInt(document.getElementById("num1").value,10) + parseInt(document.getElementById("num2").value,10);
+				else
+					document.getElementById("res").value = document.getElementById("num1").value - document.getElementById("num2").value;
+			}
+		</script>
+	</body>
+</html>

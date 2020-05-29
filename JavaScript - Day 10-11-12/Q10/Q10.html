@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Q10</title>
+	</head>
+	<body>
+		<!--
+		Create text box and a span tag , on change it should give error if user keeps text box empty.
+		-->
+		
+		Enter your name in the text box and then click outside it to see the name beside text box.<br/><br/>
+		
+		<input type="text" id="name" onchange="copyName()" required/>
+		<span id = "cpytxt"></span>
+		
+		<script>
+			function copyName()
+			{
+				var txt = document.getElementById("name").value;
+				if (txt.length <= 0)
+				{
+					alert("Please enter your name in the text box and then click outside the box to view your name");
+					return false;
+				}
+				else
+				{
+					document.getElementById("cpytxt").innerHTML = txt;					
+				}
+			}
+		</script>
+	</body>
+</html>

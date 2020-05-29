@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Q12</title>
+	</head>
+	<body>
+		<!--
+		Create three check boxes showing book name and price.
+		Create a text box.
+		As per selection of check box , text box should show total of selected price.
+		-->
+		
+		Select the books you wish to purchase<br/><br/>
+		<input type="checkbox" onclick="calcultePrice()" value="100" name="chk_stat[]"/>Let us C - 100 Rs.<br/>
+		<input type="checkbox" onclick="calcultePrice()" value="200" name="chk_stat[]"/>Black Book for Java - 200 Rs.<br/>
+		<input type="checkbox" onclick="calcultePrice()" value="300" name="chk_stat[]"/>Black Book for HTML - 300 Rs.<br/><br/>
+		
+		Total price: <input type="text" id="total" required/><br/><br/>
+		
+		<script>
+			function calcultePrice()
+			{
+				var price = 0;
+				var checkedCheckboxes = document.querySelectorAll("[name='chk_stat[]']:checked");
+				
+				for(var i=0; i<checkedCheckboxes.length; i++)
+				{
+					price += parseInt(checkedCheckboxes[i].value,10);
+				}
+				
+				document.getElementById("total").value = price;
+			}
+		</script>
+	</body>
+</html>

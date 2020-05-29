@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Q11</title>
+	</head>
+	<body>
+		<!--
+		Create text box and a span tag  ask user to enter password . Rule for password is
+		o It must have at least one capital character
+		o It must have at least one digit
+		o It must have at least 1 special symbol
+		On change event it should display appropriate error message
+		For example if user enters “Vita” error should be "please use one digit  use one symbol."
+		-->
+		
+		Enter your name in the text box and then click outside it to see the name beside text box.<br/><br/>
+		
+		<input type="password" id="name" onchange="copyName()" required/>
+		<span id = "cpytxt"></span>
+		
+		<script>
+			function copyName()
+			{
+				var txt = document.getElementById("name").value;
+				var errmsg = "Please";
+				var re = /[A-Z]/, fagg=0;
+				
+				if (!re.test(txt))
+				{
+					fagg = 1;
+					errmsg += " use one capital character"
+				}
+				
+				re = /[0-9]/
+				if (!re.test(txt))
+				{
+					fagg = 1;
+					errmsg += " use one digit"
+				}
+				
+				re = /[#?!@$%^&*-]/
+				if (!re.test(txt))
+				{
+					fagg = 1;
+					errmsg += " use one symbol"
+				}
+				
+				if (fagg == 0)
+					document.getElementById("cpytxt").innerHTML = "Password accepted!";
+				else
+					document.getElementById("cpytxt").innerHTML = errmsg;
+			}
+		</script>
+	</body>
+</html>
