@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Q4</title>
+	</head>
+	<body>
+		<!--
+		Create a text box and two buttons ‘create cookie and read cookie.’
+		When user enters data in a text box and clicks on button create cookie it should store data in cookie.
+		When user clicks on button read cookie it should display cookie data on the page.
+		-->
+		Enter something in the box that you wish to store in the cookie: <input type="text" id="txt" required/><br/><br/>
+		
+		<input type="button" value=" Create Cookie " onclick="setCookie(txt.value);">
+		<input type="button" value=" Read Cookie " onclick="getCookie();">
+		<p id="info"></p>
+		
+		<script>
+			function setCookie(usrData)
+			{
+				document.cookie = "cname = " + usrData;
+			}
+			
+			function getCookie()
+			{
+				document.getElementById("info").innerHTML = document.cookie;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Q1</title>
+	</head>
+	<body>
+		<!--Write a program to display a digital clock-->
+		<center>
+			Click on the button to view the digital clock.<br/><br/>
+			<input type="button" value=" View Clock " onclick="seeClock();">
+			<p id="digicl"></p>
+		</center>
+		
+		<script>
+			function seeClock()
+			{
+				var currdte = new Date();
+				var currhr = currdte.getHours();
+				var currmin = currdte.getMinutes();
+				var currsec = currdte.getSeconds();
+				
+				currhr = checkIfSingleDigit(currhr);
+				currmin = checkIfSingleDigit(currmin);
+				currsec = checkIfSingleDigit(currsec);
+				
+				document.getElementById("digicl").innerHTML = "<h2>" + currhr + " : " + currmin + " : " + currsec + "</h2>";
+				var t = setInterval(seeClock,1000);
+			}
+			
+			function checkIfSingleDigit(time)
+			{
+				if(time < 10)
+					return "0" + time;
+				else
+					return time;
+			}
+		</script>
+	</body>
+</html>
