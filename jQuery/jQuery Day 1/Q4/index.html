@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#txt").focus(function(){
+				$(this).css('background-color','yellow');
+			});
+			
+			$("#txt").blur(function(){
+				$(this).css('background-color','grey');
+			});
+		});
+	</script>
+		<title>Q4</title>
+	</head>
+	<body>
+		<!--Create a text box, on focus give yellow color, on blur give grey color to textbox-->
+		
+		<input type="text" id="txt"/>
+	</body>
+</html>
