@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Assignment 4</title>
+	</head>
+	<body>
+		<!--
+		Using JavaScript Create banner, include 4 images.
+		Images should rotate after time gap of 1 second.
+		-->
+		<center>
+			<img src = "img/HXVQ6311.JPG" id="slider" width="750" height="250">
+		</center>
+		
+		<script>
+			var ctr = 0;
+			var imgarr = ["HXVQ6311.JPG","HNNO1030.JPG","CMFN9437.JPG","CXIS9846.JPG"];
+			
+			var slider = setInterval(showSlider,1000);
+			function showSlider()
+			{
+				ctr++;
+				if(ctr > 3)
+					ctr = 0;	
+				document.getElementById("slider").src = "img/" + imgarr[ctr];
+			}
+		</script>
+	</body>
+</html>

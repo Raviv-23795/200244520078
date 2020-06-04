@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Assignment 5</title>
+	</head>
+	<body>
+		<!--
+		Create quiz of 10 questions using JavaScript.
+		Questions may contain Single response questions or multiple response questions. 
+		Create 1 button called as submit quiz. 
+		When you click on submit button script should show the final score with total no. of correct as well as incorrect questions.
+		-->
+		<form>
+			<b>1. What is the HTML tag under which one can write the JavaScript code?</b><br/><br/>
+			<input type="radio" name="Q1" value="1" required>&lt;javascript&gt;<br/>
+			<input type="radio" name="Q1" value="2">&lt;scripted&gt;<br/>
+			<input type="radio" name="Q1" value="3">&lt;script&gt;<br/><!--ans-->
+			<input type="radio" name="Q1" value="4">&lt;js&gt;<br/><br/><hr/>
+			
+			<b>2. Choose the correct JavaScript syntax to change the content of the following HTML code.<br/>
+			&lt;p id="geek"&gt;GeeksforGeeks&lt;/p&gt;<br/><br/></b>
+			<input type="radio" name="Q2" value="1" required>document.getElement(“geek”).innerHTML=”I am a Geek”;<br/>
+			<input type="radio" name="Q2" value="2">document.getElementById(“geek”).innerHTML=”I am a Geek”;<br/><!--ans-->
+			<input type="radio" name="Q2" value="3">document.getId(“geek”)=”I am a Geek”;<br/>
+			<input type="radio" name="Q2" value="4">document.getElementById(“geek”).innerHTML=I am a Geek;<br/><br/><hr/>
+			
+			<b>3. Which of the following is the correct syntax to display “GeeksforGeeks” in an alert box using JavaScript?</b><br/><br/>
+			<input type="radio" name="Q3" value="1" required>alertbox(“GeeksforGeeks”);<br/>
+			<input type="radio" name="Q3" value="2">msg(“GeeksforGeeks”);<br/>
+			<input type="radio" name="Q3" value="3">msgbox(“GeeksforGeeks”);<br/>
+			<input type="radio" name="Q3" value="4">alert(“GeeksforGeeks”);<br/><br/><hr/><!--ans-->
+			
+			<b>4. What is the correct syntax for referring to an external script called “geek.js”?</b><br/><br/>
+			<input type="radio" name="Q4" value="1" required>&lt;script src=”geek.js”&gt;<br/><!--ans-->
+			<input type="radio" name="Q4" value="2">&lt;script href=”geek.js”&gt;<br/>
+			<input type="radio" name="Q4" value="3">&lt;script ref=”geek.js”&gt;<br/>
+			<input type="radio" name="Q4" value="4">&lt;script name=”geek.js”&gt;<br/><br/><hr/>
+			
+			<b>5. The external JavaScript file must contain &lt;script&gt; tag. True or False?</b><br/><br/>
+			<input type="radio" name="Q5" value="1" required>True<br/>
+			<input type="radio" name="Q5" value="2">False<br/><br/><hr/><!--ans-->
+			
+			<b>6. Predict the output of the following JavaScript code.<br/>
+			&lt;script type="text/javascript"&gt; <br/>
+			a = 8 + "8"; <br/>
+			document.write(a);<br/> 
+			&lt;/script&gt;</b><br/><br/>
+			<input type="radio" name="Q6" value="1" required>16<br/>
+			<input type="radio" name="Q6" value="2">Complilation Error<br/>
+			<input type="radio" name="Q6" value="3">88<br/><!--ans-->
+			<input type="radio" name="Q6" value="4">Run Time Error<br/><br/><hr/>
+			
+			<b>7. Predict the output of the following JavaScript code.<br/>
+			&lt;script type="text/javascript"&gt;<br/>
+			var a="GeeksforGeeks"; <br/>
+			var x=a.lastIndexOf("G"); <br/>
+			document.write(x); <br/>
+			&lt;/script&gt; </b><br/><br/>
+			<input type="radio" name="Q7" value="1" required>8<br/><!--ans-->
+			<input type="radio" name="Q7" value="2">0<br/>
+			<input type="radio" name="Q7" value="3">9<br/>
+			<input type="radio" name="Q7" value="4">Error<br/><br/><hr/>
+			
+			<b>8. Which of the following is not a reserved word in JavaScript?</b><br/><br/>
+			<input type="radio" name="Q8" value="1" required>interface<br/>
+			<input type="radio" name="Q8" value="2">throws<br/>
+			<input type="radio" name="Q8" value="3">program<br/><!--ans-->
+			<input type="radio" name="Q8" value="4">short<br/><br/><hr/>
+			
+			<b>9. JavaScript can be used for? (Select all the possible responses)</b><br/><br/>
+			<input type="checkbox" name="Q9" value="1" required>Providing style to HTML web pages<br/>
+			<input type="checkbox" name="Q9" value="2">Make interactive web pages<br/><!--ans-->
+			<input type="checkbox" name="Q9" value="3">Server side form validation<br/>
+			<input type="checkbox" name="Q9" value="4">Client side form validation<br/><br/><hr/><!--ans-->
+			
+			<b>10. Which array methods are used to insert an element in an array? (Select all the possible responses)</b><br/><br/>
+			<input type="checkbox" name="Q10" value="1" required>pop()<br/><!--ans-->
+			<input type="checkbox" name="Q10" value="2">push()<br/>
+			<input type="checkbox" name="Q10" value="3">shift()<br/><!--ans-->
+			<input type="checkbox" name="Q10" value="4">unshift()<br/><br/>
+		
+			<center><input type="submit" value=" Submit Test " onclick="return calcResult()" id="btn"></center><br/>
+		</form>
+	
+		<p id="res"></p>
+		<script>
+			function calcResult()
+			{
+				var Q1 = document.querySelector('input[name="Q1"]:checked').value;
+				var Q2 = document.querySelector('input[name="Q2"]:checked').value;
+				var Q3 = document.querySelector('input[name="Q3"]:checked').value;
+				var Q4 = document.querySelector('input[name="Q4"]:checked').value;
+				var Q5 = document.querySelector('input[name="Q5"]:checked').value;
+				var Q6 = document.querySelector('input[name="Q6"]:checked').value;
+				var Q7 = document.querySelector('input[name="Q7"]:checked').value;
+				var Q8 = document.querySelector('input[name="Q8"]:checked').value;
+				var Q9item = document.getElementsByName('Q9');
+				var Q9="", Q9len = Q9item.length;
+				for (var i = 0; i < Q9len; i++)
+				{
+					if(Q9item[i].type == 'checkbox' && Q9item[i].checked == true)
+						Q9 += Q9item[i].value;
+				}
+				
+				var Q10item = document.getElementsByName('Q10');
+				var Q10="", Q10len = Q10item.length;
+				for (var i = 0; i < Q10len; i++)
+				{
+					if(Q10item[i].type == 'checkbox' && Q10item[i].checked == true)
+						Q10 += Q10item[i].value;
+				}
+				
+				var res = 0, corrIncorr="";
+				
+				if (Q1 == "3")
+				{	
+					res++;
+					corrIncorr += "<h4 style='color:green;'>Q1 is correct.</h4>";
+				}
+				else
+					corrIncorr += "<h4 style='color:red;'>Q1 is incorrect.</h4>";
+					
+				if (Q2 == "2")
+				{	
+					res++;
+					corrIncorr += "<h4 style='color:green;'>Q2 is correct.</h4>";
+				}
+				else
+					corrIncorr += "<h4 style='color:red;'>Q2 is incorrect.</h4>";
+					
+				if (Q3 == "4")
+				{	
+					res++;
+					corrIncorr += "<h4 style='color:green;'>Q3 is correct.</h4>";
+				}
+				else
+					corrIncorr += "<h4 style='color:red;'>Q3 is incorrect.</h4>";
+					
+				if (Q4 == "1")
+				{	
+					res++;
+					corrIncorr += "<h4 style='color:green;'>Q4 is correct.</h4>";
+				}
+				else
+					corrIncorr += "<h4 style='color:red;'>Q4 is incorrect.</h4>";
+				
+				if (Q5 == "2")
+				{	
+					res++;
+					corrIncorr += "<h4 style='color:green;'>Q5 is correct.</h4>";
+				}
+				else
+					corrIncorr += "<h4 style='color:red;'>Q5 is incorrect.</h4>";
+					
+				if (Q6 == "3")
+				{	
+					res++;
+					corrIncorr += "<h4 style='color:green;'>Q6 is correct.</h4>";
+				}
+				else
+					corrIncorr += "<h4 style='color:red;'>Q6 is incorrect.</h4>";
+					
+				if (Q7 == "1")
+				{	
+					res++;
+					corrIncorr += "<h4 style='color:green;'>Q7 is correct.</h4>";
+				}
+				else
+					corrIncorr += "<h4 style='color:red;'>Q7 is incorrect.</h4>";
+					
+				if (Q8 == "3")
+				{	
+					res++;
+					corrIncorr += "<h4 style='color:green;'>Q8 is correct.</h4>";
+				}
+				else
+					corrIncorr += "<h4 style='color:red;'>Q8 is incorrect.</h4>";
+					
+				if (Q9 == "24")
+				{	
+					res++;
+					corrIncorr += "<h4 style='color:green;'>Q9 is correct.</h4>";
+				}
+				else
+					corrIncorr += "<h4 style='color:red;'>Q9 is incorrect.</h4>";
+				
+				if (Q10 == "13")
+				{	
+					res++;
+					corrIncorr += "<h4 style='color:green;'>Q10 is correct.</h4>";
+				}
+				else
+					corrIncorr += "<h4 style='color:red;'>Q10 is incorrect.</h4>";
+					
+				
+				document.getElementById("res").innerHTML = "<h2>You've scored " + res + " out of 10.</h2><h4>Here are the questions that were correct or incorrect</h4>" + corrIncorr;
+				return false;
+			}
+		</script>
+	</body>
+</html>

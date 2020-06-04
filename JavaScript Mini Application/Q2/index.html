@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Assignment 2</title>
+	</head>
+	<body>
+		<!--
+		Generate Timer program using JavaScript where Time is decrementing from 5 mins to 0 seconds.
+		As soon as it reaches to zero seconds we should get one alert message with message “Time out!” 
+		-->
+		
+		<center>
+			<h3>Click on the button to start the timer.</h3>
+			<input type="button" id="seetime" onclick="starttimer()" value=" Start Timer "/><br/>
+
+			<p id="timer"></p>
+		</center>
+		<script>
+		function starttimer()
+		{
+			document.getElementById("seetime").disabled = true;
+			var mm=5, ss=0, sec;
+			
+			time = setInterval(showTime,1000);
+			
+			function showTime()
+			{
+				if(ss < 0)
+				{
+					mm--;
+					ss = 59;
+				}
+				if(mm < 0)
+				{
+					clearInterval(time);
+					alert("\"Timeout!\"");
+					document.getElementById("seetime").disabled = false;
+					document.getElementById("timer").innerHTML = "";
+					return;
+				}
+				if(ss < 10)
+				{
+					sec = "0" + ss;
+				}
+				else
+				{
+					sec = ss;
+				}
+				document.getElementById("timer").innerHTML = "<h2>0" + mm + " : " + sec + "</h2>";
+				ss--;
+			}
+		}
+		</script>
+	</body>
+</html>

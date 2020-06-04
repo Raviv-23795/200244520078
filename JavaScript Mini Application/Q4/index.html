@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Assignment 4</title>
+	</head>
+	<body>
+		<!--
+		Using JavaScript Create simple animation of 4 images.
+		You must include 2 buttons in the page “forward” and “Next” which will change image
+		-->
+		<center>
+			<img src = "img/HXVQ6311.JPG" id="slider" width="750" height="250"><br/>
+			<button onclick="goPrevious()" style="width:70px"> Previous </button>    <button onclick="goNext()" style="width:70px"> Next </button>
+		</center>
+		
+		<script>
+			var ctr = 0;
+			var imgarr = ["HXVQ6311.JPG","HNNO1030.JPG","CMFN9437.JPG","CXIS9846.JPG"];
+			function goNext()
+			{
+				ctr++;
+				if(ctr > 3)
+					ctr = 0;
+					
+				document.getElementById("slider").src = "img/" + imgarr[ctr];
+			}
+			
+			function goPrevious()
+			{
+				ctr--;
+				if(ctr < 0)
+					ctr = 3;
+					
+				document.getElementById("slider").src = "img/" + imgarr[ctr];
+			}
+		</script>
+	</body>
+</html>

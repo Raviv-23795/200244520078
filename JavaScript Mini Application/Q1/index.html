@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Assignment 1</title>
+	</head>
+	<body>
+		<!--
+		Write a script to which will take name as an input from user and display greeting message to the user according time of the day.
+		If time is less than or equal to 12PM then Good Morning with User name
+		If time is between to 12 PM to 3 PM then Good After noon with User name.
+		And if time is greater than 3 PM then Good Morning with User name.
+		-->
+		
+		<h3>Enter your name in the below text box and click out of the box to see the greeting</h3>
+		<input type="text" id="uname" onchange="showgreeting()" required/><br/><br/>
+		<p id="greet"></p>
+		
+		<script>
+		function showgreeting()
+		{
+			var today = new Date();
+			var time = today.getHours();
+			var message;
+			if(time < 12)
+			{
+				message = "Good Morning";
+			}else if(time >= 12 && time < 3)
+			{
+				message = "Good Afternoon";
+			}else
+			{
+				message = "Good Evening";
+			}
+			
+			document.getElementById("greet").innerHTML = message + " " + document.getElementById("uname").value + "!";
+		}
+		</script>
+	</body>
+</html>

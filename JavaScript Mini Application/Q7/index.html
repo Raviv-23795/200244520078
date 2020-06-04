@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Assignment 7</title>
+	</head>
+	<body>
+		<!--
+		With the help of Regular Expressions create application form, which validate inputs like name, age, and phone no., email id.
+		If user has done any mistake show appropriate message to users
+		-->
+		
+		Enter your name: <input type="text" id="name"><br/><br/>
+		Enter your Age: <input type="number" id="age"><br/><br/>
+		Enter your phone number: <input type="text" id="phone"><br/><br/>
+		Enter your email Id: <input type="text" id="email"><br/><br/>
+		<input type="submit" onclick="checkForm()">
+		
+		<p id = "msg"></p>
+		<script>
+			function checkForm()
+			{
+				var name = document.getElementById("name").value;
+				var age = document.getElementById("age").value;
+				var phone = document.getElementById("phone").value;
+				var email = document.getElementById("email").value;
+				
+				if(name == "")
+				{
+					alert("Please enter your name");
+					return false;
+				}
+				if(age == "")
+				{
+					alert("Please enter your age");
+					return false;
+				}else if(age < 0)
+				{
+					alert("Age cannot be negative");
+					return false;
+				}
+				if(phone == "")
+				{
+					alert("Please enter your phone number");
+					return false;
+				}else if(!phone.match(/^\d{10}$/))
+				{
+					alert("Please enter a valid phone number");
+					return false;
+				}
+				if(email == "")
+				{
+					alert("Please enter your email address");
+					return false;
+				}else if(!email.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/))
+				{
+					alert("Please enter a valid email address");
+					return false;
+				}
+				
+				document.getElementById("msg").innerHTML = "<h3>Form submitted!!!</h3>";
+				document.getElementById("name").value = "";
+				document.getElementById("age").value = "";
+				document.getElementById("phone").value = "";
+				document.getElementById("email").value = "";
+			}
+		</script>
+	</body>
+</html>

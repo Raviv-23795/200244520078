@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Assignment 10</title>
+	</head>
+	<body onload = "loadTimer()">
+		<!--
+		Create stop watch the way it is given in our mobile
+		-->
+		
+		<center style="margin-top:100px">
+			<input type="button" value=" Start Timer " id="start" onclick = "startTimer()">
+			<input type="button" value=" Lap " id="lap" onclick = "lapTimer()">
+			<input type="button" value=" Reset " id="reset" onclick = "resetTimer()">
+			<input type="button" value=" Stop " id="stop" onclick = "stopTimer()">
+			
+			<p id="watch"></p>
+			
+			<p id="showLap"></p>
+		</center>
+		
+		<script>
+			var hh = 0, mm = 0, ss = 0, ms = 0;
+			var dhh = 0, dmm = 0, dss = 0, dms = 0;
+			var time, lapTime = "";
+			var i = 1;
+			function loadTimer()
+			{
+				document.getElementById("watch").innerHTML = "<h1>0" + hh + " : 0"  + mm + " : 0" + ss + " : 00" + ms + "</h1>";
+				document.getElementById("lap").disabled = true;
+				document.getElementById("reset").disabled = true;
+				document.getElementById("stop").disabled = true;
+			}
+			
+			function startTimer()
+			{
+				time = setInterval(Timer,1);
+				function Timer()
+				{
+					ms++;
+					if (ms > 1000)
+					{
+						ms = 0;
+						ss++;
+						if (ss > 60)
+						{
+							ss = 0;
+							mm++;
+							if (mm > 60)
+							{
+								mm = 0;
+								hh++;
+							}
+						}
+					}
+					document.getElementById("start").disabled = true;
+					document.getElementById("lap").disabled = false;
+					document.getElementById("reset").disabled = false;
+					document.getElementById("stop").disabled = false;
+					
+					dms = checkIfSingleDigit(ms);
+					dss = checkIfSingleDigit(ss);
+					dmm = checkIfSingleDigit(mm);
+					dhh = checkIfSingleDigit(hh);
+					
+					document.getElementById("watch").innerHTML = "<h1>" + dhh + " : " + dmm + " : " + dss + " : " + dms + "</h1>";
+				}
+			}
+			
+			function checkIfSingleDigit(time)
+			{
+				if(time < 10)
+					return "0" + time;
+				else
+					return time;
+			}
+			
+			function lapTimer()
+			{
+				document.getElementById("start").disabled = true;
+				document.getElementById("lap").disabled = false;
+				document.getElementById("reset").disabled = false;
+				document.getElementById("stop").disabled = false;
+				
+				lapTime += "<h3>Lap" + i + " :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + dhh + " : " + dmm + " : " + dss + " : " + dms + "</h3>";
+				document.getElementById("showLap").innerHTML = lapTime;
+				i++;
+			}
+			
+			function stopTimer()
+			{
+				clearInterval(time);
+				
+				document.getElementById("start").disabled = false;
+				document.getElementById("lap").disabled = true;
+				document.getElementById("reset").disabled = false;
+				document.getElementById("stop").disabled = false;
+				document.getElementById("watch").innerHTML = "<h1>" + dhh + " : " + dmm + " : " + dss + " : " + dms + "</h1>";
+			}
+			
+			function resetTimer()
+			{
+				clearInterval(time);
+				hh = 0, mm = 0, ss = 0, ms = 0, lapTime = "";
+				document.getElementById("start").disabled = false;
+				document.getElementById("lap").disabled = true;
+				document.getElementById("reset").disabled = true;
+				document.getElementById("stop").disabled = true;
+				document.getElementById("watch").innerHTML = "<h1>0" + hh + " : 0"  + mm + " : 0" + ss + " : 00" + ms + "</h1>";
+				document.getElementById("showLap").innerHTML = lapTime;
+			}
+		</script>
+	</body>
+</html>

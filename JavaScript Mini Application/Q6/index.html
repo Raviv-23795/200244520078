@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Assignment 6</title>
+	</head>
+	<body>
+		<!--
+		Display date on web page at right hand corner in format of 
+		Today day, month date, hours: minutes: seconds
+		Time should move without refreshing web page
+		-->
+		
+		<p id="info" style="text-align:right"></p>
+		
+		<script>
+			
+			var timer = setInterval(showTimer,1000);
+			
+			function showTimer()
+			{
+				var currdte = new Date();
+				var currday = currdte.getDay();
+				var currmnth = currdte.getMonth();
+				var currdate = currdte.getDate();
+				var currhr = currdte.getHours();
+				var currmm = currdte.getMinutes();
+				var currss = currdte.getSeconds();
+				
+				currhr = checkIfSingleDigit(currhr);
+				currmm = checkIfSingleDigit(currmm);
+				currss = checkIfSingleDigit(currss);
+				
+				switch(currday)
+				{
+					case 0: currday = "Sunday";
+							break;
+					case 1: currday = "Monday";
+							break;
+					case 2: currday = "Tuesday";
+							break;
+					case 3: currday = "Wednesday";
+							break;
+					case 4: currday = "Thursday";
+							break;
+					case 5: currday = "Friday";
+							break;
+					case 6: currday = "Saturday";
+							break;
+				}
+				
+				switch(currmnth)
+				{
+					case 0: currmnth = "January";
+							break;
+					case 1: currmnth = "February";
+							break;
+					case 2: currmnth = "March";
+							break;
+					case 3: currmnth = "April";
+							break;
+					case 4: currmnth = "May";
+							break;
+					case 5: currmnth = "June";
+							break;
+					case 6: currmnth = "July";
+							break;
+					case 7: currmnth = "August";
+							break;
+					case 8: currmnth = "September";
+							break;
+					case 9: currmnth = "October";
+							break;
+					case 10: currmnth = "November";
+							break;
+					case 11: currmnth = "December";
+							break;
+				}
+				
+				document.getElementById("info").innerHTML = "<h2>" + currday + ", " + currmnth + " " + currdate + ", " + currhr + " : " + currmm + " : " + currss + "</h2>";
+			}
+			
+			function checkIfSingleDigit(time)
+			{
+				if(time < 10)
+					return "0" + time;
+				else
+					return time;
+			}
+		</script>
+	</body>
+</html>

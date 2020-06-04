@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Assignment 9</title>
+	</head>
+	<body>
+		<!--
+		Using JavaScript Design simple calculator which can perform simple arithmetic functions like +, -, *, / and %.
+		Design with the help of form.
+		-->
+		
+		<center>
+			<fieldset style="width:150px; padding:25px; margin-top:100px">
+				<form>
+					<input type="number" id="num" onkeyup="getExpr(this.value)" style="width:100px;">
+					<input type="button" id="clr" value=" C " onclick="getExpr(this.value)">
+					<p>
+						<input type="button" id="num7" value=" 7 " onclick="getExpr(this.value)">
+						<input type="button" id="num8" value=" 8 " onclick="getExpr(this.value)">
+						<input type="button" id="num9" value=" 9 " onclick="getExpr(this.value)">
+						<input type="button" id="add" value=" + " onclick="getExpr(this.value)"><br/><br/>
+						<input type="button" id="num4" value=" 4 " onclick="getExpr(this.value)">
+						<input type="button" id="num5" value=" 5 " onclick="getExpr(this.value)">
+						<input type="button" id="num6" value=" 6 " onclick="getExpr(this.value)">
+						<input type="button" id="sub" value=" - " onclick="getExpr(this.value)"><br/><br/>
+						<input type="button" id="num1" value=" 1 " onclick="getExpr(this.value)">
+						<input type="button" id="num2" value=" 2 " onclick="getExpr(this.value)">
+						<input type="button" id="num3" value=" 3 " onclick="getExpr(this.value)">
+						<input type="button" id="mul" value=" * " onclick="getExpr(this.value)"><br/><br/>
+						<input type="button" id="dot" value=" . " onclick="getExpr(this.value)">
+						<input type="button" id="num0" value=" 0 " onclick="getExpr(this.value)">
+						<input type="button" id="div" value=" / " onclick="getExpr(this.value)">
+						<input type="button" id="mod" value=" % " onclick="getExpr(this.value)"><br/><br/>
+						<input type="button" id="eqa" style="width:120px;" value=" = " onclick="calculator()">
+					</p>
+				</form>
+			</fieldset>
+			
+			<p id="expr"></p>
+
+			<p id="res"></p>
+		</center>
+		
+		<script>
+			var exprn = "";
+			function getExpr(op)
+			{
+				if (op==" C ")
+				{
+					document.getElementById("expr").innerHTML = "";
+					document.getElementById("res").innerHTML = "";
+					exprn = "";
+				}
+				else
+				{
+					exprn += op.trim();
+					document.getElementById("expr").innerHTML = exprn;
+					document.getElementById("num").value = "";
+				}
+			}
+			function calculator()
+			{
+				document.getElementById("res").innerHTML = "Result: " + eval(exprn);
+			}
+		</script>
+	</body>
+</html>
