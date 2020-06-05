@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function (){
+			$("button").click(function (){
+				$(".hide").hide("slow", function(){
+					alert("Done with hiding");
+				});
+			});
+		});
+	</script>
+		<title>Q5</title>
+	</head>
+	<body>
+		<!--Create a paragraph, on button click it should hide, once hidden it should display message done with hiding-->
+		
+		<button> Click to hide the paragraph </button><br/>
+		<p class="hide">
+			<b style="font-size:2em">jQuery Callback Functions</b><br/><br/>
+			JavaScript statements are executed line by line. However, with effects, the next line of code can be run even though the effect is not finished. This can create errors.
+			<br/><br/>
+			To prevent this, you can create a callback function.
+			<br/><br/>
+			A callback function is executed after the current effect is finished.
+			<br/><br/>
+			Typical syntax: <b>$(selector).hide(speed,callback);</b>
+		</p>
+	</body>
+</html>

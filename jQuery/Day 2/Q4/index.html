@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function (){
+			$("button").click(function (){
+				$("img").animate({
+					height: "200px",
+					width: "500px"
+				},"slow");
+			});
+			
+			/*
+			//Using Relative Values - It is also possible to define relative values (the value is then relative to the element's current value).
+			//This is done by putting += or -= in front of the value
+			//The below code first moves the image till it reaches 500px from left and then resizes imag to the specified relative size.
+			$("button").click(function(){
+				$("img").animate({
+					left: '500px',
+					height: '+=100px',
+					width: '+=250px'
+				});
+			});
+			
+			//Use Queue Functionality - if you want to perform different animations after each other, we take advantage of the queue functionality.
+			//This means that if you write multiple animate() calls after each other, jQuery creates an "internal" queue with these method calls.
+			//Then it runs the animate calls ONE by ONE
+			$("button").click(function (){
+				$("img").animate({height: "200px"},"slow");
+				$("img").animate({width: "500px"},"slow");
+			});*/
+		});
+	</script>
+		<title>Q4</title>
+	</head>
+	<body>
+		<!--Create image on page, on button click size of image will slowly increase-->
+		
+		<button> Click to show and hide image </button><br/><br/>
+		<img src = "img/CXIS9846.JPG" style="height:50px;width:125px;position:absolute;">
+	</body>
+</html> 

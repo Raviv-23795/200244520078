@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function (){
+			$("button").click(function (){
+				$("h3").slideUp();
+				$("h3").slideDown();
+			});
+			/*
+			//jQuery chaining - allows us to run multiple jQuery commands, one after the other, on the same element(s).
+			$("button").click(function (){
+				$("h3").slideUp().slideDown();
+			});
+			
+			//The jQuery slideToggle() method toggles between the slideDown() and slideUp() methods
+			$("button").click(function (){
+				$("h3").slideToggle();
+			});*/
+		});
+	</script>
+		<title>Q3</title>
+	</head>
+	<body>
+		<!--Create a button, on button click your name which is written in h3 tag will slide up and then it will slide down-->
+		
+		<h3>Ravi Verma</h3>
+		<button> Click to slide up and slide down your name </button>
+	</body>
+</html> 
