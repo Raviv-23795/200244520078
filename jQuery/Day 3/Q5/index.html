@@ -5,7 +5,7 @@
 	<script>
 		$(document).ready(function (){
 			$("input[type='radio']").click(function(){
-				var radioValue = $("input[name='fruits']:checked").val();
+				var radioValue = $("input[name='colors']:checked").val();
 				if(radioValue){
 					$("textarea").css({"color":radioValue});
 					//$("input[type='text']").css({"color":radioValue});
@@ -23,10 +23,10 @@
 		
 		Click on your favourite color to display the text in the textarea in that color.
 		<br/><br/>
-		<input type = "radio" name = "fruits" value = "Black">Black
-		<input type = "radio" name = "fruits" value = "Red">Red
-		<input type = "radio" name = "fruits" value = "Green">Green
-		<input type = "radio" name = "fruits" value = "Blue">Blue
+		<input type = "radio" name = "colors" value = "Black">Black
+		<input type = "radio" name = "colors" value = "Red">Red
+		<input type = "radio" name = "colors" value = "Green">Green
+		<input type = "radio" name = "colors" value = "Blue">Blue
 		<br/><br/>
 		<textarea rows = "5" cols = "25"></textarea>
 		<!--<input type = "text">-->
