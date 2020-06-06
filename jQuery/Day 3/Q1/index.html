@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function (){
+			$("button").click(function (){
+				$("#txt2").val($("#txt1").val());
+			});
+		});
+	</script>
+		<title>Q1</title>
+	</head>
+	<body>
+		<!--Create two text boxes and a buttons on click of button it should copy data from one text box to another-->
+		
+		Enter your text in this box: <input type="text" id="txt1"/><br/><br/>
+		<button> Click to copy text from above box to below box </button><br/><br/>
+		<input type="text" id="txt2"/>
+		
+	</body>
+</html>

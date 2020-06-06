@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function (){
+			$("input[type='radio']").click(function(){
+				var radioValue = $("input[name='fruits']:checked").val();
+				if(radioValue){
+					$("ol").append("<li>" + radioValue + "</li>"); 
+				}
+			});
+		});
+		
+	</script>
+		<title>Q3</title>
+	</head>
+	<body>
+		<!--Create a list of fruits and a radio buttons showing fruits name which ever radio is clicked that fruit name should be add to list-->
+		
+		<input type = "radio" name = "fruits" value = "Grapes">Grapes
+		<input type = "radio" name = "fruits" value = "Orange">Orange
+		<input type = "radio" name = "fruits" value = "Strawberry">Strawberry
+		<input type = "radio" name = "fruits" value = "Litchi">Litchi
+		<input type = "radio" name = "fruits" value = "Kiwi">Kiwi
+		
+		<ol>
+			<li>Mango</li>
+			<li>Apple</li>
+			<li>Banana</li>
+		</ol>
+	</body>
+</html>
